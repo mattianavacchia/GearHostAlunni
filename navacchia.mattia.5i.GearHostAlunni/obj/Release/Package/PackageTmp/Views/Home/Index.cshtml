@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <h1>Sito dei Siti 5i</h1>
+    <p>Gli alunni della classe 5i sono esattamente: @Model.Count. Ecco le loro immagini, il loro nome e il link alla loro Web App su Gear Host</p>
+    <p><a class="btn btn-primary btn-lg" href="http://navach.altervista.org/home.xml" role="button">File XML Feed.</a></p>
+</div>
+
+<div class="page-header">
+</div>
+
+<div class="row row-centered" style="margin-top: 20px;">
+    @foreach (var alunno in Model)
+    {
+        <div class="col-xs-4" style="margin-bottom:30px;">
+            <div class="text-center">
+                <a href="@alunno.LinkSito" target="_blank" title="Sito Gear Host Alunno @alunno.Cognome"><img class="img-thumbnail img-alunni" src="@alunno.Immagine" /></a>
+            </div>
+            <div class="text-center">
+                <h3>@alunno.Cognome</h3>
+                <p>@alunno.Nome</p>
+                <a href="@alunno.LinkSito" target="_blank">Link Gear Host!</a>
+            </div>
+        </div>
+
+        /*<div class="row row-centered">
+            <div class="div-immagine-profilo" style="background-image: url('@alunno.Immagine');">
+                <!-- Sfondo div immagine profilo-->
+            </div>
+            <div class="text-center">
+                <h3>@alunno.Cognome</h3>
+                <p>@alunno.Nome</p>
+                <a href="@alunno.LinkSito">Link Gear Host!</a>
+            </div>
+        </div>*/
+    }
+</div>
+
+
